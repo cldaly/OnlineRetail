@@ -83,8 +83,8 @@ select {
 				<td>${ product.name }</td>
 				<td>${ product.price }</td>
 				<td>
-					<select name="p_qty">
-						<option value="0" selected disabled>0</option>
+					<select name="p_qty" required>
+						<option value="" selected disabled>Select Qty.</option>
 						<option value="1">1</option>
 						<option value="2">2</option>
 						<option value="3">3</option>

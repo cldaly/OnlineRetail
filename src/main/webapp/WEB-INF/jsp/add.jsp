@@ -65,7 +65,8 @@ form label {
 }
 
 .field {
-	width: 150px;
+	font-size: 1em;
+	width: 250px;
 }
 
 select {
@@ -78,11 +79,12 @@ select {
 	<div class="content">
 		<h1>Add Product Details</h1>
 		<f:form method="POST" action="save">
-			<div><f:label path="name">Name:</f:label><f:input class="field" type="text" path="name" /></div>
-			<div><f:label path="price">Price:</f:label><f:input class="field" type="text" path="price" /></div>
+			<div><f:label path="name">Name:</f:label><f:input class="field" type="text" path="name" required="true" /></div>
+			<div><f:label id="price" path="price">Price:</f:label><f:input class="field" type="text" path="price" required="true" /></div>
 			<div>
 				<f:label path="category">Category:</f:label>
-				<f:select class="field" path="category">
+				<f:select id="cat" class="field" path="category" required="true">
+					<f:option path="category" value="" selected="true" disabled="true">Select Category</f:option>
 					<f:option path="category" value="Shoes">Shoes</f:option>
 					<f:option path="category" value="Watches">Watches</f:option>
 					<f:option path="category" value="Hats">Hats</f:option>
@@ -90,9 +92,11 @@ select {
 					<f:option path="category" value="Pants">Pants</f:option>
 				</f:select>
 			</div>
-			<div><input class="btn" type="submit" value="Add Product" /></div>
+			<div><f:label path="image">Image:</f:label><f:input path="image" type="file" required="true" class="field"/></div>
+			<div><input id="submit" class="btn" type="submit" value="Add Product" /></div>
 		</f:form>
 	</div>
 	<a class="btn2" href="/OnlineRetail">Home</a>
 </body>
+
 </html>

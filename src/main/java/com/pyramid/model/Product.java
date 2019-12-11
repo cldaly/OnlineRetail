@@ -1,9 +1,5 @@
 package com.pyramid.model;
 
-import javax.swing.ImageIcon;
-
-import org.springframework.web.multipart.MultipartFile;
-
 public class Product {
 	
 	private String name;

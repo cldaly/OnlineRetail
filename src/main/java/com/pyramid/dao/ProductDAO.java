@@ -43,6 +43,7 @@ public class ProductDAO {
 				p.setName(rs.getString(2));
 				p.setPrice(rs.getDouble(3));
 				p.setCategory(rs.getString(4));
+				p.setImage(rs.getBytes(5));
 				return p;
 			}
 		});
