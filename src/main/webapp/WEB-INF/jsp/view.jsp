@@ -1,4 +1,4 @@
-<%@ page import="org.apache.commons.codec.binary.Base64, sun.misc.BASE64Encoder" language="java" contentType="text/html; charset=UTF-8"
+<%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
@@ -65,25 +65,12 @@ img {
 			<th>Name</th>
 			<th>Price</th>
 			<th>Category</th>
-			<th>Image</th>
 		</tr>
 		<c:forEach var="product" items="${ productlist }">
 			<tr>
 				<td>${ product.name }</td>
 				<td>${ product.price }</td>
 				<td>${ product.category }</td>
-				<c:set var="i" value="${ product.image }"></c:set>
-				<%! String image; %>
-				<% 
-				byte[] b = (byte[]) pageContext.getAttribute("i"); 
-				BASE64Encoder base64Encoder = new BASE64Encoder();
-				StringBuilder imageString = new StringBuilder();
-				imageString.append("data:image/png;base64,");
-				imageString.append(base64Encoder.encode(b));
-				image = imageString.toString();
-				System.out.println(image);
-				%>
-				<td><img alt="${ product.name }" src="<%= image %>"></td>
 			</tr>
 		</c:forEach>
 	</table>
