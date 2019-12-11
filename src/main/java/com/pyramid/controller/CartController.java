@@ -33,7 +33,7 @@ public class CartController {
 		double total_price = p.getPrice()*qty;
 		Cart c = new Cart(name,qty,total_price);
 		cdao.addCartDetails(c);
-		return new ModelAndView("redirect:/viewCart.jsp");
+		return new ModelAndView("redirect:/viewCart");
 	}
 	
 	@RequestMapping("/viewCart")
@@ -45,6 +45,6 @@ public class CartController {
 	@RequestMapping("/placeOrder")
 	public ModelAndView placeOrder() {
 		cdao.clearCartDetails();
-		return new ModelAndView("redirect:/registration.jsp");
+		return new ModelAndView("registration","message","Successfully Purchased the Products!");
 	}
 }

@@ -31,7 +31,7 @@ public class CartDAO {
 			public Cart mapRow(ResultSet r, int n) throws SQLException {
 				Cart s = new Cart();
 				s.setP_name(r.getString(2));
-				s.setP_qty(r.getDouble(3));
+				s.setP_qty(r.getInt(3));
 				s.setTotal_p_price(r.getDouble(4));
 				return s;
 			}
