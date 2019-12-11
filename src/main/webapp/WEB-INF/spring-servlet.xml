@@ -20,9 +20,9 @@
    <bean id="db"
    class="org.springframework.jdbc.datasource.DriverManagerDataSource">
 		<property name="driverClassName" value="com.mysql.cj.jdbc.Driver" />
-		<property name="url" value="jdbc:mysql://localhost:3306/testdb" />
+		<property name="url" value="jdbc:mysql://localhost:3306/test" />
 		<property name="username" value="root" />
-		<property name="password" value="root1234" />
+		<property name="password" value="Zaam-05091994" />
    </bean>
    
    <bean id="jt" class="org.springframework.jdbc.core.JdbcTemplate">
@@ -36,5 +36,7 @@
    <bean id="cart" class="com.pyramid.dao.CartDAO">
    		 <property name="jdbc" ref="jt" />
    </bean>
+   
+ 
    
 </beans>
