@@ -27,10 +27,7 @@ public class ProductDAO {
 		return jdbc.query("select * from product where category = '"+categoryName + "'", new RowMapper<Product>() {
 			public Product mapRow(ResultSet rs, int row) throws SQLException {
 				Product p = new Product(rs.getString(2),rs.getDouble(3),rs.getString(4),rs.getBytes(5));
-				p.getName();
-				p.getPrice();
-				p.getCategory();
-				p.getImage();
+
 				return p;
 			}
 		});
@@ -53,9 +50,7 @@ public class ProductDAO {
 		List<Product> p=jdbc.query("select * from product where name = '"+p_name + "'", new RowMapper<Product>() {
 			public Product mapRow(ResultSet rs, int row) throws SQLException {
 				Product p = new Product(rs.getString(2),rs.getDouble(3),rs.getString(4),rs.getBytes(5));
-				p.getName();
-				p.getPrice();
-				p.getCategory();
+
 				return p;
 			}
 		});

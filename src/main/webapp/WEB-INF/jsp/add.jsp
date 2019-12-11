@@ -92,7 +92,6 @@ select {
 					<f:option path="category" value="Pants">Pants</f:option>
 				</f:select>
 			</div>
-			<div><f:label path="image">Image:</f:label><f:input path="image" type="file" required="true" class="field"/></div>
 			<div><input id="submit" class="btn" type="submit" value="Add Product" /></div>
 		</f:form>
 	</div>
