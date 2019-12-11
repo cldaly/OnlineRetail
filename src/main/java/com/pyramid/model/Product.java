@@ -1,20 +1,25 @@
 package com.pyramid.model;
 
+import javax.swing.ImageIcon;
+
+import org.springframework.web.multipart.MultipartFile;
+
 public class Product {
 	
 	private String name;
 	private double price;
 	private String category;
+	private byte[] image;
 	
 	public Product() {
 		
 	}
-	
-	public Product(String name, double price, String category) {
+	public Product(String name, double price, String category, byte[] image) {
 		super();
 		this.name = name;
 		this.price = price;
 		this.category = category;
+		this.image = image;
 	}
 	public String getName() {
 		return name;
@@ -34,6 +39,14 @@ public class Product {
 	public void setCategory(String category) {
 		this.category = category;
 	}
+	public byte[] getImage() {
+		return image;
+	}
+	public void setImage(byte[] image) {
+		this.image = image;
+	}
+	
+	
 	
 	
 
