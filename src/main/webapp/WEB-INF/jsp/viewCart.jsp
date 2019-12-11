@@ -64,6 +64,7 @@ table, th, td {
 </head>
 <body>
 <h1>Your Cart</h1>
+	
 	<c:choose>
 	<c:when test="${fn:length(cartlist) > 0}">
 		<table>
@@ -72,13 +73,19 @@ table, th, td {
 			<th>Quantity</th>
 			<th>Price</th>
 		</tr>
+		<c:set var="total" value="0"/>
 		<c:forEach var="cart" items="${ cartlist }">
 			<tr>
 				<td>${ cart.p_name }</td>
 				<td>${ cart.p_qty }</td>
 				<td>${ cart.total_p_price }</td>
 			</tr>
+			<c:set var="total" value="${total + cart.total_p_price}" />
 		</c:forEach>
+		<tr>
+			<td colspan="2">Cart Total</td>
+			<td>${total }</td>
+		</tr>
 	</table>
 	<a class="btn" href="placeOrder">Place Order</a>
 	</c:when>
