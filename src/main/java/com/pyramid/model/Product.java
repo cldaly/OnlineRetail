@@ -1,5 +1,9 @@
 package com.pyramid.model;
 
+import java.io.IOException;
+
+import org.springframework.web.multipart.MultipartFile;
+
 public class Product {
 	
 	private String name;
@@ -38,11 +42,13 @@ public class Product {
 	public byte[] getImage() {
 		return image;
 	}
+	public void setImage(MultipartFile image) throws IOException {
+		this.image = image.getBytes();
+	}
+	
 	public void setImage(byte[] image) {
 		this.image = image;
 	}
-	
-	
 	
 	
 
